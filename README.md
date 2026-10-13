@@ -1,36 +1,46 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Kone-forest клиент
 
-## Getting Started
+## Описание
+Данное приложение представляет собой визуальное отображение <br>
+клиентской части веб-сервиса Kone forest -- сайт по бронированию <br>
+отелей-шале.
 
-First, run the development server:
+## Установка и запуск
+Приложение представлено в виде стандартного Next.js приложения в 2х вариантах:
+- docker контейнер
+- локальный запуск
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+### Dockerfile (в разработке)
+1. Собрать Docker-образ
+   1. docker build -t kone-forest-client .
+2. Запустить контейнер
+   1. docker run -d -p 3000:3000 --name kone-forest-client-container kone-forest-client
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Локальный запуск
+Необходимо учитывать какая версия Node.js стоит на машине!
+1. npm i
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+#### Рарзработка
+- npm run dev
+#### Продакшн
+- npm run build
+- npm run start
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Технологии
+При разработке использовались следующие технологии:
+### Next.js 
+Используется как основной веб-фреймворк, который:
+- улучшает SEO поисковую способность сайта
+- обеспечивает маршрутизацию из коробки
+- обеспечивает разделение кода
 
-## Learn More
+### TypeScript
+TypeScript используется как современная технология, которая обеспечивает типобезопасность
 
-To learn more about Next.js, take a look at the following resources:
+### Docker
+Docker в данном проекте используется, как вспомогательный элемент, который:
+- автоматизирует разработку
+- обеспечивает переносимость приложения
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+### TailwindCSS
+Инструмент для быстрого написания кода, и улучшение читаемости проекта
