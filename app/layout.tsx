@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 import { Alice } from "next/font/google";
-import Header from './(ui)/header';
-import "./globals.css";
+import Header from '@/(ui)/header';
+import "@/globals.css";
+import Footer from "@/(ui)/footer";
 
 const alice = Alice({
   weight: "400",
@@ -19,10 +20,31 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
     <html
       lang="en"
       className={`${alice.variable} h-full antialiased`}
+      suppressHydrationWarning
     >
-      <body className="min-h-full flex flex-col">
+      <head>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              try {
+                const storage = localStorage.getItem('theme-storage');
+                if (storage) {
+                  const parsed = JSON.parse(storage);
+                  if (parsed.state?.mode === 'dark') {
+                    document.documentElement.classList.add('dark');
+                  }
+                } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+                  document.documentElement.classList.add('dark');
+                }
+              } catch (_) {}
+            `,
+          }}
+        />
+      </head>
+      <body className="min-h-full">
         <Header />
-        {children}
+        <div className="pt-20">{children}</div>
+        <Footer />
       </body>
     </html>
   );

@@ -5,6 +5,9 @@ const nextConfig: NextConfig = {
   experimental: {
     agentFeedback: true,
   },
+  images: {
+    qualities: [85, 95],
+  },
   cacheComponents: true,
   partialPrefetching: true,
   turbopack: {
@@ -15,7 +18,7 @@ const nextConfig: NextConfig = {
       },
     },
   },
-  allowedDevOrigins: ['172.20.10.2']
+  allowedDevOrigins: ['172.20.10.2', '192.168.31.83']
 };
 
 export default nextConfig;

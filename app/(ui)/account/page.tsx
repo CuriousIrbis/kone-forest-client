@@ -2,8 +2,8 @@
 
 export default function Account(){
     return (
-        <div>
-            <h1 className="text-black ">Hello</h1>
-        </div>
+        <main>
+            <h1 className="text-black">Hello</h1>
+        </main>
     )
 }

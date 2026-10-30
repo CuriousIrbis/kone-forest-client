@@ -4,14 +4,26 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 
 import {links, type ILink} from '../lib/links';
-import HeaderBtn from "./components/headerBtn";
+import HeaderBtn from "./components/header/headerBtn";
 import { usePathname } from "next/navigation";
+
+import useTheme from '../storage/theme';
+import ThemeButton from "./components/header/themeBtn";
+
+import useUser from '../storage/user'
 
 export default function Header(){
     const [isOpen, setIsOpen] = useState<boolean>(false);
-    const [name, setName] = useState<string>("Alex");
-    const [lastname, setLastname] = useState<string>("Abramov");
+
+    const name = useUser((state) => state.name)
+    const lastName = useUser((state) => state.lastName)
+    const setName = useUser((state) => state.setName)
+    const setLastname = useUser((state) => state.setLastname)
+
     const pathname = usePathname()
+
+    const mode = useTheme((state) => state.mode)
+    const toggleTheme = useTheme((state) => state.toggleTheme)
 
     useEffect(() => {
         const sessionName = sessionStorage.getItem("sessionName") || "Alex";
@@ -25,16 +37,17 @@ export default function Header(){
         setTimeout(() => {setIsOpen(false)}, 0)
 
         return clearTimeout(timer);
-    }, [pathname])
+    }, [pathname, setName, setLastname])
 
     return (
-        <header className="relativepb-20">
-            <nav className="bg-green-1 p-5 flex flex-row items-center justify-between">
+        <header className="relative-20">
+            <nav className="bg-green-1 dark:bg-green-900 py-5 px-10 fixed w-full flex flex-row items-center justify-between">
                 <section>
                     <Link 
                         href={'/'}
+                        className="text-white-1 text-[24px] font-bold"
                     >
-                        <span className="border border-white px-2 py-1 rounded-full">K</span> Kone forest
+                        <span className="border border-white px-2 py-1 rounded-full text-[16px]">K</span> Kone forest
                     </Link>
                 </section>
                 <section className="hidden md:flex">
@@ -49,11 +62,15 @@ export default function Header(){
                     ))}
                 </section>
                 <section className="flex gap-6">
+                    <ThemeButton 
+                        state={mode}
+                        toggleTheme={toggleTheme}
+                    />
                     <Link
                         href={"/account"}
-                        className="p-2 rounded-full bg-orange-400"
+                        className="p-2 rounded-full bg-orange-400 text-white-1"
                     >
-                        {name[0]}{lastname[0]}
+                        {name[0]}{lastName[0]}
                     </Link>
                     <HeaderBtn setIsOpen={setIsOpen} isOpen={isOpen} />
                 </section>
