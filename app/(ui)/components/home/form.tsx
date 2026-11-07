@@ -1,8 +1,13 @@
+'use client'
+
 import { useChaletStore } from "@/storage/chalets";
 import Input1 from "./input1";
 import Input2 from "./input2";
-import { SubmitHandler, useForm } from "react-hook-form";
-import { IFormDate, IOptions } from "@/lib/types";
+import { useForm } from "react-hook-form";
+import { IFormDate } from "@/lib/types/formDateInterface";
+import {IOptions} from "@/lib/types/optionsInterface"
+import { redirect } from "next/navigation";
+import { useShallow } from "zustand/shallow";
 
 function parseToDate(date: string): Date | undefined{
     if(!date || date.includes('_')) return undefined;
@@ -15,7 +20,13 @@ function parseToDate(date: string): Date | undefined{
 
 export default function HomeForm(){
 
-    const chalets = useChaletStore((state) => state.chalets)
+    const {chalets, setChaletCheckIn, setChaletCheckOut} = useChaletStore(
+        useShallow((state) => ({
+            chalets: state.chalets,
+            setChaletCheckIn: state.setChaletCheckIn,
+            setChaletCheckOut: state.setChaletCheckOut
+        }))
+    )
     const {handleSubmit, control, watch} = useForm<IFormDate>({
         defaultValues: {
             checkIn: '',
@@ -34,7 +45,9 @@ export default function HomeForm(){
     const guestsMax = Array.from(new Set(chalets.map(position => position.guestsMax)))
 
     function onSubmit(date: IFormDate){
-        if(!(date.checkIn > date.checkOut)) alert('Нельзя ставить выезд раньше въезда') 
+        setChaletCheckIn(date.checkIn)
+        setChaletCheckOut(date.checkOut)
+        redirect('/chalets')
     }
 
     const loc = <Input1 params={locations}/>

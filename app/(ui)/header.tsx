@@ -40,7 +40,7 @@ export default function Header(){
     }, [pathname, setName, setLastname])
 
     return (
-        <header className="relative-20">
+        <header className="relative z-50">
             <nav className="bg-green-1 dark:bg-green-900 py-5 px-10 fixed w-full flex flex-row items-center justify-between">
                 <section>
                     <Link 

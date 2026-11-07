@@ -1,3 +1,5 @@
+'use client'
+
 import Copyright from "./components/footer/copyright";
 import FLinks from "./components/footer/links";
 

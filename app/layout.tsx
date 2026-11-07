@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Alice } from "next/font/google";
+import { Alice, Fraunces, Outfit } from "next/font/google";
 import Header from '@/(ui)/header';
 import "@/globals.css";
 import Footer from "@/(ui)/footer";
@@ -8,6 +8,18 @@ const alice = Alice({
   weight: "400",
   variable: '--font-alice',
   subsets: ["cyrillic", "latin"]
+})
+
+const outfit = Outfit({
+  weight: "400",
+  variable: '--font-outfit',
+  subsets: ['latin']
+})
+
+const fraunces = Fraunces({
+  weight: "400",
+  variable: '--font-fraunces',
+  subsets: ["latin"]
 })
 
 export const metadata: Metadata = {
@@ -19,7 +31,11 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html
       lang="en"
-      className={`${alice.variable} h-full antialiased`}
+      className={`
+        ${alice.variable} 
+        ${fraunces.variable} 
+        ${outfit.variable}
+        h-full antialiased`}
       suppressHydrationWarning
     >
       <head>

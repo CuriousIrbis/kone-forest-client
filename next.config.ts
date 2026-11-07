@@ -6,7 +6,7 @@ const nextConfig: NextConfig = {
     agentFeedback: true,
   },
   images: {
-    qualities: [85, 95],
+    qualities: [85, 95, 100],
   },
   cacheComponents: true,
   partialPrefetching: true,

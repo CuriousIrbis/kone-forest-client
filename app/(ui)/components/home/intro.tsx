@@ -5,7 +5,7 @@ import HomeForm from './form';
 
 export default function Intro(){
     return (
-        <section className={`flex flex-col px-10 md:pt-30 bg-linear-to-b from-green-4 via-green-3 to-green-2`}>
+        <section className={`flex flex-col px-10 md:pt-32 bg-linear-to-b from-green-4 via-green-3 to-green-2`}>
             <div className='absolute inset-0 -z-10'>
                 <div className='md:hidden block relative h-full w-full'>
                     <Image 

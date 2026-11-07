@@ -5,6 +5,7 @@
   --white-1: #FBFAF6;
   --orange-1: #C77852;
   --yellow-1: #E0B18D;
+  --beige-1: #F2EFE7;  
 
   --green-2: rgba(16, 36, 31, 0.88);
   --green-3: rgba(16, 36, 31, 0.25);
@@ -16,10 +17,17 @@
   --color-white-1: var(--white-1);
   --color-orange-1: var(--orange-1);
   --color-yellow-1: var(--yellow-1);
+  --color-beige-1: var(--beige-1);
 
   --color-green-2: var(--green-2);
   --color-green-3: var(--green-3);
   --color-green-4: var(--green-4);
+
+  --color-brown: var(--color-amber-950);
+  --color-beige: var(--color-olive-100);
+
+  --font-fraunces: var(--font-fraunces);
+  --font-outfit: var(--font-outfit);
 }
 
 @custom-variant dark (&:where(.dark, .dark *));
