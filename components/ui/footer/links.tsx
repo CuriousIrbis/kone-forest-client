@@ -1,15 +1,5 @@
 import Link from "next/link";
-
-type TDescription = {
-    title: string
-    href: string
-}
-
-interface ITable{
-    header: string
-    description1: TDescription
-    description2: TDescription
-}
+import {type ITable} from '@/lib/types/footerLinksInterface'
 
 const Table: Array<ITable> = [
     {

@@ -1,6 +1,6 @@
 'use client'
 
-import { useChaletStore } from "@/storage/chalets";
+import { useChaletStore } from "@/lib/storage/chalets";
 import Input1 from "./input1";
 import Input2 from "./input2";
 import { useForm } from "react-hook-form";

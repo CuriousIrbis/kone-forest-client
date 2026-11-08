@@ -1,7 +1,7 @@
 'use client';
 
 import Image from 'next/image';
-import HomeForm from './form';
+import HomeForm from '@/components/ui/home/form';
 
 export default function Intro(){
     return (

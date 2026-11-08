@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import { Alice, Fraunces, Outfit } from "next/font/google";
-import Header from '@/(ui)/header';
-import "@/globals.css";
-import Footer from "@/(ui)/footer";
+import Header from '@/components/layout/header';
+import "./globals.css";
+import Footer from "@/components/layout/footer";
 
 const alice = Alice({
   weight: "400",

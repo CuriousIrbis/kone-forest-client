@@ -3,14 +3,14 @@
 import Link from "next/link";
 import { useEffect, useState } from "react";
 
-import {links, type ILink} from '../lib/links';
-import HeaderBtn from "./components/header/headerBtn";
+import {links, type ILink} from '@/lib/links';
+import HeaderBtn from "@/components/ui/header/headerBtn";
 import { usePathname } from "next/navigation";
 
-import useTheme from '../storage/theme';
-import ThemeButton from "./components/header/themeBtn";
+import useTheme from '@/lib/storage/theme';
+import ThemeButton from "@/components/ui/header/themeBtn";
 
-import useUser from '../storage/user'
+import useUser from '@/lib/storage/user'
 
 export default function Header(){
     const [isOpen, setIsOpen] = useState<boolean>(false);

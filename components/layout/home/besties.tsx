@@ -1,7 +1,7 @@
 import { IMock } from "@/lib/types/mockInterface";
-import { useChaletStore } from "@/storage/chalets";
+import { useChaletStore } from "@/lib/storage/chalets";
 import Link from "next/link";
-import HomeVarian from "./homeVar";
+import HomeVarian from "@/components/ui/home/homeVar";
 
 export default function Besties(){
     const chalets = useChaletStore((state) => state.chalets)

@@ -1,7 +1,7 @@
 'use client'
 
-import Copyright from "./components/footer/copyright";
-import FLinks from "./components/footer/links";
+import Copyright from "@/components/ui/footer/copyright";
+import FLinks from "@/components/ui/footer/links";
 
 export default function Footer(){
     return (
