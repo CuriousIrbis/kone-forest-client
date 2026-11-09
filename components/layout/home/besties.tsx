@@ -19,7 +19,7 @@ export default function Besties(){
                     Смотреть больше
                 </Link>
             </section>
-            <section className="flex flex-row justify-between">
+            <section className="flex flex-col md:flex-row gap-10 justify-between">
                 {filtredChalets.map((home: IMock) => (
                     <HomeVarian 
                         data={home}

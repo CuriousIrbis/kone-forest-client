@@ -1,4 +1,5 @@
 import {type IMock} from '@/lib/types/mockInterface'
+import { IWorkingData } from './types/workingDataInterface';
 
 const mockData: Array<IMock> = [
   {
@@ -44,7 +45,37 @@ const mockData: Array<IMock> = [
     bedrooms: 4,
     bathrooms: 3,
     price: 21900
+  },
+    {
+    id: 494525,
+    img: "/homes/north.jpeg",
+    raiting: 4.7,
+    location: 'Кавказ',
+    title: 'Северный склон',
+    guestsMax: 8,
+    bedrooms: 4,
+    bathrooms: 3,
+    price: 21900
   }
 ]
 
-export {mockData}
+const workingData: Array<IWorkingData> = [
+  {
+    title: "Выберите дом",
+    description: "Сравните расположение, удобства, вместимость и отзывы реальных гостей."
+  },
+  {
+    title: "Проверьте даты",
+    description: "Календарь учитывает подтверждённые брони и даты, закрытые владельцем."
+  },
+  {
+    title: "Забронируйте",
+    description: "Сразу увидите стоимость проживания, уборки и итоговую сумму."
+  },
+  {
+    title: "Отправляйтесь",
+    description: "После подтверждения контакты и детали поездки появятся в профиле."
+  }
+]
+
+export {mockData, workingData}

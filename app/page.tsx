@@ -3,6 +3,7 @@
 import Intro from '@/components/layout/home/intro';
 import Besties from '@/components/layout/home/besties';
 import Profits from '@/components/layout/home/profits'
+import Working from '@/components/layout/home/working';
 
 export default function Home(){
   
@@ -11,7 +12,7 @@ export default function Home(){
         <Intro />
         <Besties />
         <Profits />
-        <section></section>
+        <Working />
     </main>
   )
 }

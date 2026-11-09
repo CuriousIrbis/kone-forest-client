@@ -6,6 +6,7 @@ interface IChaletStore{
   checkOut: string
   setChaletCheckIn: (newDate: string) => void
   setChaletCheckOut: (newDate: string) => void
+  getRating: () => number
 }
 
 export {type IChaletStore}

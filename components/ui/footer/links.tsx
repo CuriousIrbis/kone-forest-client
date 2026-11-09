@@ -39,12 +39,12 @@ const Table: Array<ITable> = [
 
 export default function FLinks(){
     return (
-        <div className="flex flex-row justify-between flex-wrap">
+        <div className="flex md:flex-row flex-col justify-between flex-wrap">
             <section className="flex flex-col gap-5">
                 <p className="text-white-1 text-[24px] font-bold"><span className="border border-white-1 px-2 py-1 rounded-full text-[16px]">K</span> Kone forest</p>
                 <p className="text-gray-300">Природные дома, в которых хочется задержаться.</p>
             </section>
-            <section className="flex flex-row gap-50">
+            <section className="flex md:flex-row flex-col gap-50">
                 {Table.map((row: ITable, index: number) => (
                     <div className={`flex flex-col text-gray-300 md:gap-2 ${index === Table.length ? 'hidden md:flex' : ''}`} key={index}>
                         <header className="text-yellow-1">
