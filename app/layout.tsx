@@ -3,6 +3,7 @@ import { Alice, Fraunces, Outfit } from "next/font/google";
 import Header from '@/components/layout/header';
 import "./globals.css";
 import Footer from "@/components/layout/footer";
+import {Suspense} from 'react'
 
 const alice = Alice({
   weight: "400",
@@ -58,7 +59,9 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         />
       </head>
       <body className="min-h-full">
-        <Header />
+        <Suspense fallback={<div className="h-16" />}>
+          <Header />
+        </Suspense>
         <div className="pt-20">{children}</div>
         <Footer />
       </body>

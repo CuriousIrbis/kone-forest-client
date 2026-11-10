@@ -1,16 +1,21 @@
 'use client'
 
-import { use } from "react";
+import { Suspense, use } from "react";
+import {IPageProps} from '@/lib/types/pathPropsInterface'
 
-interface PageProps {
-  params: Promise<{ id: string }>;
-}
-
-export default function ChaletId({params}: PageProps){
+function ChaletContent({params}: IPageProps){
     const {id} = use(params)
     return (
         <div>
             chalet id: {id}
         </div>
+    )
+}
+
+export default function ChaletId({params}: IPageProps){
+    return (
+        <Suspense fallback={<div>Загрузка информации о шале...</div>}>
+            <ChaletContent params={params}/>
+        </Suspense>
     )
 }
