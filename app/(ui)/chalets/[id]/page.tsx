@@ -1,9 +1,13 @@
 'use client'
 
-import { usePathname } from "next/navigation";
+import { use } from "react";
 
-export default function ChaletId(){
-    const id = usePathname()
+interface PageProps {
+  params: Promise<{ id: string }>;
+}
+
+export default function ChaletId({params}: PageProps){
+    const {id} = use(params)
     return (
         <div>
             chalet id: {id}

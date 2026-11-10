@@ -8,6 +8,7 @@ interface IMock{
   bedrooms: number
   bathrooms: number
   price: number
+  isAvailable: boolean
 }
 
 export {type IMock}

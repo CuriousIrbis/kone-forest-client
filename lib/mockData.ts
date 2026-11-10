@@ -11,7 +11,8 @@ const mockData: Array<IMock> = [
     guestsMax: 4,
     bedrooms: 2,
     bathrooms: 2,
-    price: 12400
+    price: 12400,
+    isAvailable: true
   },
   {
     id: 313025,
@@ -22,7 +23,8 @@ const mockData: Array<IMock> = [
     guestsMax: 6,
     bedrooms: 3,
     bathrooms: 2,
-    price: 16800
+    price: 16800,
+    isAvailable: true
   },
   {
     id: 494225,
@@ -33,7 +35,8 @@ const mockData: Array<IMock> = [
     guestsMax: 2,
     bedrooms: 1,
     bathrooms: 1,
-    price: 8900
+    price: 8900,
+    isAvailable: false
   },
   {
     id: 494525,
@@ -44,7 +47,8 @@ const mockData: Array<IMock> = [
     guestsMax: 8,
     bedrooms: 4,
     bathrooms: 3,
-    price: 21900
+    price: 21900,
+    isAvailable: true
   },
     {
     id: 494525,
@@ -55,7 +59,8 @@ const mockData: Array<IMock> = [
     guestsMax: 8,
     bedrooms: 4,
     bathrooms: 3,
-    price: 21900
+    price: 21900,
+    isAvailable: false
   }
 ]
 
