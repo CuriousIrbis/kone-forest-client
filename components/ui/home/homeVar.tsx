@@ -10,12 +10,14 @@
     // bathrooms: 2,
     // price: 12400
 
-import {type IMock} from '@/lib/types/mockInterface'
+import {type IChalet} from '@/lib/types/chaletInterface'
 import Image from 'next/image'
 import Link from 'next/link';
 
-export default function HomeVarian({data}: {data: IMock}){
-    const {id, img, raiting, location, title, guestsMax, bedrooms, bathrooms, price} = data
+export default function HomeVarian({data}: {data: IChalet}){
+    const {id, rating, address, title, guestsMax, bedrooms, bathrooms, price, image_url} = data
+
+    const finalImgUrl = image_url || '/static/north.jpg';
 
     return (
         <Link 
@@ -34,18 +36,18 @@ export default function HomeVarian({data}: {data: IMock}){
         >
             <section className='relative h-80 w-80'>
                 <Image 
-                    src={img}
+                    src={`http://localhost:7777${finalImgUrl}`}
                     alt={title}
                     fill
                     className='object-cover rounded-[10px]'
                     priority
                 />
                 <div className='absolute top-4 right-5'>
-                    <span className='text-amber-950 px-3 py-3 text-[12px] bg-gray-100/90 rounded-[10px]'>⭐ {raiting}</span>
+                    <span className='text-amber-950 px-3 py-3 text-[12px] bg-gray-100/90 rounded-[10px]'>⭐ {rating}</span>
                 </div>
             </section>
             <section className='flex flex-col text-black px-4 py-5 gap-4'>
-                <p className='text-amber-800 font-outfit text-[12px] font-bold'>🏕️ {location.toUpperCase()}</p>
+                <p className='text-amber-800 font-outfit text-[12px] font-bold'>🏕️ {address.toUpperCase()}</p>
                 <h3 className='text-green-950 text-[28px]'>{title}</h3>
                 <section className='flex flew-row gap-5'>
                     <span>👤 до {guestsMax}</span>

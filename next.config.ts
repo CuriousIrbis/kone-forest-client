@@ -7,6 +7,15 @@ const nextConfig: NextConfig = {
   },
   images: {
     qualities: [85, 95, 100],
+    dangerouslyAllowLocalIP: true,
+    remotePatterns: [
+      {
+        protocol: 'http',
+        hostname: 'localhost',
+        port: '7777',
+        pathname: '/static/**'
+      }
+    ]
   },
   cacheComponents: true,
   partialPrefetching: true,

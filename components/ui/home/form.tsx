@@ -22,7 +22,7 @@ export default function HomeForm(){
 
     const {chalets, setChaletCheckIn, setChaletCheckOut} = useChaletStore(
         useShallow((state) => ({
-            chalets: state.chalets,
+            chalets: state.chalets || [],
             setChaletCheckIn: state.setChaletCheckIn,
             setChaletCheckOut: state.setChaletCheckOut
         }))
@@ -41,7 +41,7 @@ export default function HomeForm(){
     const checkOut = parseToDate(checkOutStr)
 
 
-    const locations = Array.from(new Set(chalets.map(position => position.location)))
+    const locations = Array.from(new Set(chalets.map(position => position.address)))
     const guestsMax = Array.from(new Set(chalets.map(position => position.guestsMax)))
 
     function onSubmit(date: IFormDate){

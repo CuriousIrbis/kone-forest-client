@@ -1,12 +1,20 @@
-import { IMock } from "@/lib/types/mockInterface";
+import { IChalet } from "@/lib/types/chaletInterface";
 import { useChaletStore } from "@/lib/storage/chalets";
 import Link from "next/link";
 import HomeVarian from "@/components/ui/home/homeVar";
+import { useEffect } from "react";
 
 export default function Besties(){
-    const chalets = useChaletStore((state) => state.chalets)
-    const filtredChalets = [...chalets].sort((var1: IMock, var2: IMock) => var2.raiting - var1.raiting).slice(0, 3)
+    const {chalets, getChalets, isLoading, error} = useChaletStore()
+    const filtredChalets = [...chalets].sort((var1: IChalet, var2: IChalet) => var2.rating - var1.rating).slice(0, 3)
 
+    useEffect(() => {
+        getChalets()
+    }, [getChalets])
+
+    if(isLoading) return <div>Загрузка данных...</div>
+    if(error) return <div>Внутренняя ошибка {error}</div>
+    
     return (
         <section className="py-30 px-10 flex flex-col gap-10">
             <p className="text-amber-700 font-bold text-[12px] tracking-[3px] [word-spacing:8px]">ПРОВЕРЕНО РЕДАКЦИЕЙ</p>
@@ -20,7 +28,7 @@ export default function Besties(){
                 </Link>
             </section>
             <section className="flex flex-col md:flex-row gap-10 justify-between">
-                {filtredChalets.map((home: IMock) => (
+                {filtredChalets.map((home: IChalet) => (
                     <HomeVarian 
                         data={home}
                         key={home.id}

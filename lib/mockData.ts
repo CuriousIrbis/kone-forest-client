@@ -1,7 +1,7 @@
-import {type IMock} from '@/lib/types/mockInterface'
+import {type IChalet} from '@/lib/types/chaletInterface'
 import { IWorkingData } from './types/workingDataInterface';
 
-const mockData: Array<IMock> = [
+const mockData: Array<IChalet> = [
   {
     id: 314225,
     img: "/homes/kedroviy.jpeg",
@@ -63,6 +63,8 @@ const mockData: Array<IMock> = [
     isAvailable: false
   }
 ]
+
+
 
 const workingData: Array<IWorkingData> = [
   {

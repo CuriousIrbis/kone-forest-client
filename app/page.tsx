@@ -6,7 +6,6 @@ import Profits from '@/components/layout/home/profits'
 import Working from '@/components/layout/home/working';
 
 export default function Home(){
-  
   return (
     <main>
         <Intro />
