@@ -10,7 +10,7 @@ export default function Chalets(){
 
     return (
         <main className="px-10 py-30">
-            <h1 className="text-amber-700 text-[14px]">КОЛЛЕКЦИЯ KONE-FOREST</h1>
+            <h1 className="text-amber-700 text-[14px]">КОЛЛЕКЦИЯ KONE FOREST</h1>
             <h2 className="text-olive-950 text-[60px]">Найдите свой дом</h2>
             <div className="py-20"><HomeForm /></div>
             <div className="flex flex-row flex-wrap justify-between gap-40">
