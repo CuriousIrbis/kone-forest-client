@@ -12,7 +12,7 @@
   --green-4: rgba(16, 36, 31, 0.15);
 }
 
-@theme {
+@theme inline{
   --color-green-1: var(--green-1);
   --color-white-1: var(--white-1);
   --color-orange-1: var(--orange-1);
@@ -26,8 +26,8 @@
   --color-brown: var(--color-amber-950);
   --color-beige: var(--color-olive-100);
 
-  --font-fraunces: var(--font-fraunces);
-  --font-outfit: var(--font-outfit);
+  --font-lora: var(--font-lora);
+  --font-nunito-sans: var(--font-nunito-sans);
 }
 
 @custom-variant dark (&:where(.dark, .dark *));
@@ -39,7 +39,16 @@
 }
 
 body {
-  background: var(--white-1);
+  background: var(--beige-1);
   color: var(--color-black);
   font-family: Arial, Helvetica, sans-serif;
+
+  h1, h2{
+    font-family: --font-lora;
+    font-weight: 400;
+  }
+
+  p, span{
+    font-family: --font-nunito-sans;
+  }
 }

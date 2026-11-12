@@ -2,22 +2,14 @@ import { IChalet } from "@/lib/types/chaletInterface";
 import { useChaletStore } from "@/lib/storage/chalets";
 import Link from "next/link";
 import HomeVarian from "@/components/ui/home/homeVar";
-import { useEffect } from "react";
 
 export default function Besties(){
-    const {chalets, getChalets, isLoading, error} = useChaletStore()
+    const {chalets} = useChaletStore()
     const filtredChalets = [...chalets].sort((var1: IChalet, var2: IChalet) => var2.rating - var1.rating).slice(0, 3)
 
-    useEffect(() => {
-        getChalets()
-    }, [getChalets])
-
-    if(isLoading) return <div>Загрузка данных...</div>
-    if(error) return <div>Внутренняя ошибка {error}</div>
-    
     return (
         <section className="py-30 px-10 flex flex-col gap-10">
-            <p className="text-amber-700 font-bold text-[12px] tracking-[3px] [word-spacing:8px]">ПРОВЕРЕНО РЕДАКЦИЕЙ</p>
+            <h1 className="text-amber-700 font-bold text-[12px] tracking-[3px] [word-spacing:8px]">ПРОВЕРЕНО РЕДАКЦИЕЙ</h1>
             <section className="flex flex-row items-center justify-between">
                 <h2 className="text-green-950 text-[42px]">Дома с характером</h2>
                 <Link 

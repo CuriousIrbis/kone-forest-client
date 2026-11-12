@@ -77,7 +77,7 @@ export default function HomeForm(){
     return (
         <form className="flex md:flex-row flex-col text-center text-black bg-white-1 justify-between w-full" onSubmit={handleSubmit(onSubmit)}>
             {fields.map((field: IOptions, index: number) => (
-                <section key={index} className="flex flex-col flex-1 text-center px-10 md:py-5 items-start border-[0.5px] border-gray-500">
+                <section key={index} className="flex flex-col flex-1 text-center px-10 md:py-5 items-start border-[0.5px] ">
                     <label className="text-gray-600 mb-2">{field.title}</label>
                     {field.input}
                 </section>

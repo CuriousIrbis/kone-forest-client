@@ -1,26 +1,21 @@
 import type { Metadata } from "next";
-import { Alice, Fraunces, Outfit } from "next/font/google";
+import { Nunito_Sans, Lora } from "next/font/google";
 import Header from '@/components/layout/header';
 import "./globals.css";
 import Footer from "@/components/layout/footer";
 import {Suspense} from 'react'
+import StoreInitializer from "@/components/providers/storeInitializer";
 
-const alice = Alice({
-  weight: "400",
-  variable: '--font-alice',
-  subsets: ["cyrillic", "latin"]
+const lora = Lora({
+  weight: '400',
+  variable: '--font-lora',
+  subsets: ['cyrillic', 'latin']
 })
 
-const outfit = Outfit({
-  weight: "400",
-  variable: '--font-outfit',
-  subsets: ['latin']
-})
-
-const fraunces = Fraunces({
-  weight: "400",
-  variable: '--font-fraunces',
-  subsets: ["latin"]
+const nunito_sans = Nunito_Sans({
+  weight: '400',
+  variable: '--font-nunito-sans',
+  subsets: ['cyrillic', 'latin']
 })
 
 export const metadata: Metadata = {
@@ -29,13 +24,13 @@ export const metadata: Metadata = {
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
+  
   return (
     <html
       lang="en"
       className={`
-        ${alice.variable} 
-        ${fraunces.variable} 
-        ${outfit.variable}
+        ${nunito_sans.variable} 
+        ${lora.variable} 
         h-full antialiased`}
       suppressHydrationWarning
     >
@@ -62,7 +57,9 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         <Suspense fallback={<div className="h-16" />}>
           <Header />
         </Suspense>
-        <div className="pt-20">{children}</div>
+        <StoreInitializer>
+          {children}
+        </StoreInitializer>
         <Footer />
       </body>
     </html>

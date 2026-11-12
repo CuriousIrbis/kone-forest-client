@@ -41,16 +41,16 @@ export default function Header(){
 
     return (
         <header className="relative z-50">
-            <nav className="bg-green-1 dark:bg-green-900 py-5 px-10 fixed w-full flex flex-row items-center justify-between">
+            <nav className="bg-green-1/99 dark:bg-green-900 py-5 px-10 fixed w-full flex flex-row items-center justify-between">
                 <section>
                     <Link 
                         href={'/'}
-                        className="text-white-1 text-[24px] font-bold"
+                        className="text-white-1 text-[24px] font-bold font-lora"
                     >
                         <span className="border border-white px-2 py-1 rounded-full text-[16px]">K</span> Kone forest
                     </Link>
                 </section>
-                <section className="hidden md:flex">
+                <section className="hidden md:flex font-nunito-sans">
                     {links.map((link: ILink, index: number) => (
                         <Link
                             key={index}

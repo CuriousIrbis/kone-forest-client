@@ -41,13 +41,14 @@ export default function HomeVarian({data}: {data: IChalet}){
                     fill
                     className='object-cover rounded-[10px]'
                     priority
+                    sizes='80'
                 />
                 <div className='absolute top-4 right-5'>
                     <span className='text-amber-950 px-3 py-3 text-[12px] bg-gray-100/90 rounded-[10px]'>⭐ {rating}</span>
                 </div>
             </section>
             <section className='flex flex-col text-black px-4 py-5 gap-4'>
-                <p className='text-amber-800 font-outfit text-[12px] font-bold'>🏕️ {address.toUpperCase()}</p>
+                <p className='text-amber-800 font-nunito-sans text-[12px] font-bold'>🏕️ {address.toUpperCase()}</p>
                 <h3 className='text-green-950 text-[28px]'>{title}</h3>
                 <section className='flex flew-row gap-5'>
                     <span>👤 до {guestsMax}</span>
@@ -55,7 +56,7 @@ export default function HomeVarian({data}: {data: IChalet}){
                     <span>🛁 {bathrooms}</span>
                 </section>
                 <hr className='border-gray-300 my-5'/>
-                <p>от <span className='text-[22px] font-bold font-fraunces'>{price} ₽</span> / ночь</p>
+                <p>от <span className='text-[22px] font-bold'>{price} ₽</span> / ночь</p>
             </section>
         </Link>
     )

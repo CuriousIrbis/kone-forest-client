@@ -7,7 +7,9 @@ export default function Profits(){
     const chalets = useChaletStore((state) => state.chalets)
 
     const count = chalets.length
-    const rating = useChaletStore((state) => state.getRating())/count
+    const storeRating = useChaletStore((state) => state.getRating())
+    const rating = count > 0 ? (storeRating/count) : 0
+
 
     const numbers: Array<INumbers> = [
         {
