@@ -15,9 +15,9 @@ import Image from 'next/image'
 import Link from 'next/link';
 
 export default function HomeVarian({data}: {data: IChalet}){
-    const {id, rating, address, title, guestsMax, bedrooms, bathrooms, price, image_url} = data
+    const {id, rating, address, title, guestsMax, bedrooms, bathrooms, price, img} = data
 
-    const finalImgUrl = image_url || '/static/north.jpg';
+    const finalImgUrl = img || '/static/north.jpg';
 
     return (
         <Link 
