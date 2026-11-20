@@ -1,5 +1,5 @@
 async function getChalets() {
-    const res = await fetch('http://localhost:7777/', {
+    const res = await fetch('https://kone-forest-server.onrender.com', {
         cache: 'no-cache',
     })
 

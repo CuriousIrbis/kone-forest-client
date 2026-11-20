@@ -29,7 +29,7 @@ export default function ContactsForm(){
     const {register, handleSubmit, formState: {errors}, reset} = useForm<IForm>()
     const onSubmit: SubmitHandler<IForm> = async (data) => {
         const sendRequest = async () => {
-            const res = await fetch('http://localhost:7777/contacts', {
+            const res = await fetch('https://kone-forest-server.onrender.com/contacts', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'

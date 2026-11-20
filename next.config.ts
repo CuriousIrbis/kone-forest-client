@@ -6,9 +6,16 @@ const nextConfig: NextConfig = {
     agentFeedback: true,
   },
   images: {
+    unoptimized: true,
     qualities: [85, 95, 100],
     dangerouslyAllowLocalIP: true,
     remotePatterns: [
+      //https://kone-forest-server.onrender.com
+      {
+        protocol: 'https',
+        hostname: 'kone-forest-server.onrender.com',
+        pathname: '/static/**'
+      },
       {
         protocol: 'http',
         hostname: 'localhost',

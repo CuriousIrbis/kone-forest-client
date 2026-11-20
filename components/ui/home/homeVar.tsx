@@ -15,9 +15,9 @@ import Image from 'next/image'
 import Link from 'next/link';
 
 export default function HomeVarian({data}: {data: IChalet}){
-    const {id, rating, address, title, guestsMax, bedrooms, bathrooms, price, img} = data
+    const {id, rating, address, title, guestsMax, bedrooms, bathrooms, price, image_url} = data
 
-    const finalImgUrl = img || '/static/north.jpg';
+    const finalImgUrl = image_url || '/static/north.jpeg';
 
     return (
         <Link 
@@ -36,7 +36,8 @@ export default function HomeVarian({data}: {data: IChalet}){
         >
             <section className='relative h-80 w-80'>
                 <Image 
-                    src={`http://localhost:7777${finalImgUrl}`}
+                    src={`https://kone-forest-server.onrender.com${finalImgUrl}`}
+                    // src={`http://localhost:7777${finalImgUrl}`}
                     alt={title}
                     fill
                     className='object-cover rounded-[10px]'

@@ -12,7 +12,7 @@ interface IChalet{
   bathrooms: number
   is_active: boolean
   amenities: Array<IAmenities> | null
-  img: string
+  image_url: string
 }
 
 export {type IChalet}
